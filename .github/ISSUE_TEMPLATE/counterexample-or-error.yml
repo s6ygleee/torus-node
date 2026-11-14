@@ -1,0 +1,42 @@
+name: Counterexample or possible error
+description: Report a suspected mathematical, semantic, numerical, citation, or physical error.
+title: "[Possible error]: "
+labels: [possible-error]
+body:
+  - type: input
+    id: statement
+    attributes:
+      label: Statement at issue
+      description: Quote or identify the smallest exact claim and its version.
+    validations: {required: true}
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Error type
+      options: [Formal proof, Prose-to-formal semantics, Numerical result, Missing assumption, Citation, Physical interpretation, Other]
+    validations: {required: true}
+  - type: textarea
+    id: argument
+    attributes:
+      label: Counterexample or analysis
+      description: Show the conflict step by step and explain how the original hypotheses are satisfied.
+    validations: {required: true}
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction material
+      description: Provide code, data, commands, or references needed to check the report.
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction or narrower claim
+      description: Optional, but useful when the issue can be repaired by restating scope.
+  - type: checkboxes
+    id: goodfaith
+    attributes:
+      label: Good-faith check
+      options:
+        - label: I searched existing Issues and Discussions for this point.
+          required: true
+        - label: This report addresses the claim and evidence, not the author personally.
+          required: true

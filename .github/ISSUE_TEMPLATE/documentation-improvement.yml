@@ -1,0 +1,30 @@
+name: Feature or documentation improvement
+description: Suggest a focused improvement to the portal or research documentation.
+title: "[Docs]: "
+labels: [documentation]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Page or file
+      description: Provide the URL or repository path.
+    validations: {required: true}
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Explain what is unclear, inaccessible, inaccurate, missing, or difficult to maintain.
+    validations: {required: true}
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed change
+      description: Describe the desired behavior or wording and any research-integrity implications.
+    validations: {required: true}
+  - type: checkboxes
+    id: claims
+    attributes:
+      label: Claim discipline
+      options:
+        - label: The proposal preserves or improves the distinction between established, conditional, assumed, and open claims.
+          required: true

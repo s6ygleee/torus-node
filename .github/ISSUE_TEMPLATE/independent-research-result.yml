@@ -1,0 +1,48 @@
+name: Independent research result
+description: Submit an external calculation, proof, replication, or publication for review and attribution.
+title: "[Independent result]: "
+labels: [independent-result]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Result title
+    validations: {required: true}
+  - type: input
+    id: authors
+    attributes:
+      label: Authors and attribution
+      description: List names as they should appear. Add affiliations only with authorization.
+    validations: {required: true}
+  - type: textarea
+    id: claim
+    attributes:
+      label: Main claim and scope
+      description: State the result, assumptions, and whether it is finite, continuum, physical, numerical, or empirical.
+    validations: {required: true}
+  - type: input
+    id: record
+    attributes:
+      label: Public record
+      description: Link a DOI, repository, preprint, or archived package.
+    validations: {required: true}
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction instructions
+      description: Provide environment, commands, inputs, expected outputs, and checksums when applicable.
+    validations: {required: true}
+  - type: input
+    id: license
+    attributes:
+      label: License or reuse terms
+    validations: {required: true}
+  - type: checkboxes
+    id: authorship
+    attributes:
+      label: Submission confirmation
+      options:
+        - label: I am authorized to submit this record and the attribution is accurate.
+          required: true
+        - label: I understand that listing indicates relevance and traceability, not endorsement.
+          required: true

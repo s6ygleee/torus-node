@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Open-ended research discussion
+    url: https://github.com/s6ygleee/torus-node/discussions
+    about: Use Discussions for questions and proposals that are not yet actionable tasks.
+  - name: Lean 4 implementation issues
+    url: https://github.com/s6ygleee/torus-node-lean4/issues
+    about: Report issues specific to the separate formalisation and reproducibility archive.

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Torus-Node mark</title>
+  <desc id="desc">A geometric torus with four linked nodes.</desc>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a8ebe5"/><stop offset="1" stop-color="#797fc7"/></linearGradient></defs>
+  <ellipse cx="48" cy="48" rx="36" ry="23" fill="none" stroke="url(#g)" stroke-width="3"/>
+  <ellipse cx="48" cy="48" rx="15" ry="9" fill="none" stroke="#69d4d0" stroke-width="2"/>
+  <path d="M15 40c9 10 22 16 33 16s24-6 33-16M15 56c9-10 22-16 33-16s24 6 33 16" fill="none" stroke="#d9bb73" stroke-width="1.5" opacity=".78"/>
+  <circle cx="15" cy="48" r="4" fill="#69d4d0"/><circle cx="48" cy="25" r="4" fill="#d9bb73"/><circle cx="81" cy="48" r="4" fill="#69d4d0"/><circle cx="48" cy="71" r="4" fill="#d9bb73"/>
+</svg>

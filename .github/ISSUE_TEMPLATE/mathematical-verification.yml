@@ -1,0 +1,44 @@
+name: Mathematical verification
+description: Report an independent proof check, Lean review, or reproducibility result.
+title: "[Verification]: "
+labels: [verification]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: Exact target
+      description: Give the theorem, declaration, certificate, section, version, and commit where possible.
+    validations: {required: true}
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Outcome
+      options: [Reproduced, Partially reproduced, Not reproduced, Semantic mismatch, Review in progress]
+    validations: {required: true}
+  - type: textarea
+    id: method
+    attributes:
+      label: Method and environment
+      description: Include tool versions, commands, inputs, and any deviation from the pinned environment.
+    validations: {required: true}
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link logs, code, calculations, or a proof. Remove secrets and private paths.
+    validations: {required: true}
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and limitations
+      description: State what your result establishes and what remains unverified.
+    validations: {required: true}
+  - type: checkboxes
+    id: conduct
+    attributes:
+      label: Research record
+      options:
+        - label: I have disclosed assumptions and computational dependencies.
+          required: true
+        - label: I have checked that this does not overstate a finite result as a continuum or physical proof.
+          required: true

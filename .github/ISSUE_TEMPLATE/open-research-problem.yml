@@ -1,0 +1,35 @@
+name: Open research problem
+description: Propose a precisely scoped open problem or a concrete attack on an existing one.
+title: "[Open problem]: "
+labels: [open-problem]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: State a question that can in principle be proved, disproved, constructed, or measured.
+    validations: {required: true}
+  - type: textarea
+    id: background
+    attributes:
+      label: Background and current status
+      description: Explain the relevant model layer and why existing results do not close the problem.
+    validations: {required: true}
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Assumptions and definitions
+      description: List the exact setting, objects, and allowed premises.
+    validations: {required: true}
+  - type: textarea
+    id: approach
+    attributes:
+      label: Proposed approach or deliverable
+      description: Give a plausible method and a criterion for completion or falsification.
+    validations: {required: true}
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Link manuscript sections, declarations, datasets, and prior literature.
+    validations: {required: true}
