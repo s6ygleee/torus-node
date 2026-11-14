@@ -1,0 +1,35 @@
+title: "[Verification] "
+labels: [verification]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Discuss proof review, Lean semantics, certificate replay, or an independent reproduction. Use an Issue when the work becomes an actionable defect or patch.
+  - type: input
+    id: target
+    attributes:
+      label: Exact verification target
+      description: Identify the statement, declaration, certificate, version, and commit.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Method and environment
+      description: Give tool versions, commands, assumptions, and any deviation from the pinned environment.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Result or question
+      description: Explain what was reproduced, challenged, or remains uncertain.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Reproducible evidence
+      description: Link code, logs, calculations, or a proof without private paths or secrets.
+    validations:
+      required: true

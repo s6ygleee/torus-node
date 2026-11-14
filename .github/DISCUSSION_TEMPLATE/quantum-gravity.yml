@@ -1,0 +1,40 @@
+title: "[Quantum Gravity] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Discuss continuum reconstruction, random geometry, reflection positivity, effective gravity, and the limits of the present finite model.
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Research layer
+      options:
+        - Microscopic source and random geometry
+        - Scaling limit and constructive field theory
+        - Osterwalder–Schrader reconstruction
+        - Emergent signature and causality
+        - Effective Einstein–Hilbert dynamics
+        - Cosmology or black-hole sector
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Technical question or result
+      description: Separate finite mathematics from the proposed physical interpretation.
+    validations:
+      required: true
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Assumptions and model branch
+      description: State whether the minimal model, dynamical-metric branch, comparison model, or unrestricted source is being discussed.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and references
+      description: Provide a derivation, calculation, counterexample, or literature reference.
+    validations:
+      required: true

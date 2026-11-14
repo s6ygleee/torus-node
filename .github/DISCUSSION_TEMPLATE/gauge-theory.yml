@@ -1,0 +1,41 @@
+title: "[Gauge Theory] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Discuss ordered-history algebras, gauge representations, Wilson/source bridges, electroweak analysis, confinement, and mass-gap boundaries.
+  - type: dropdown
+    id: sector
+    attributes:
+      label: Gauge-theory sector
+      options:
+        - S4 ordered-history algebra
+        - Representation or block selection
+        - U(1) and photon sector
+        - Electroweak sector
+        - SU(3) and Yang–Mills sector
+        - Ward identities or anomaly constraints
+        - Source-to-Wilson universality
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Statement or research question
+      description: Identify the exact finite, conditional, or open claim.
+    validations:
+      required: true
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Assumptions
+      description: State lattice action, coupling regime, representation, volume/cutoff conditions, and bridges used.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Analysis and references
+      description: Supply a reproducible argument, calculation, or counterexample.
+    validations:
+      required: true

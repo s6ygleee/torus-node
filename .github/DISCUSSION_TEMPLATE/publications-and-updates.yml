@@ -1,0 +1,46 @@
+title: "[Publication/Update] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share versioned publications, archived releases, corrections, independent results, and project updates with precise scope and attribution.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Update type
+      options:
+        - Manuscript or preprint
+        - Software or data release
+        - Correction or retraction
+        - Independent research result
+        - Reproducibility report
+        - Project update
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Record title
+    validations:
+      required: true
+  - type: input
+    id: identifier
+    attributes:
+      label: Persistent identifier or public URL
+      description: Prefer a DOI, tagged release, archived repository, or other versioned record.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and status
+      description: State peer-review status, version, authorship, license, and what the record establishes.
+    validations:
+      required: true
+  - type: textarea
+    id: changes
+    attributes:
+      label: Summary and relationship to prior work
+      description: Describe new material, corrections, dependencies, and remaining open boundaries.
+    validations:
+      required: true

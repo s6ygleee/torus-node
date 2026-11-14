@@ -32,6 +32,7 @@ Then open `http://localhost:8000/`. Opening `index.html` directly also works for
 - `assets/js/problems.js`: data-driven open-problem catalogue
 - `docs/`: research roadmap and theorem–assumption map
 - `.github/ISSUE_TEMPLATE/`: scientific contribution forms
+- `.github/DISCUSSION_TEMPLATE/`: structured forms for the seven research Discussion categories
 
 ## Deployment
 

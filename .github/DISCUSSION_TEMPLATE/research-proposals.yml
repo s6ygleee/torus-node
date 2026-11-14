@@ -1,0 +1,41 @@
+title: "[Proposal] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose a bounded collaboration with a clear method, attribution plan, and criterion for success or falsification.
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What precise research question will the proposal address?
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Proposed method
+      description: Include the model layer, assumptions, tools, and expected evidence.
+    validations:
+      required: true
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Deliverables and milestones
+      description: Define reviewable outputs and a realistic sequence.
+    validations:
+      required: true
+  - type: textarea
+    id: expertise
+    attributes:
+      label: Expertise or collaboration sought
+      description: Identify needed mathematical, physical, computational, or formal-methods expertise.
+    validations:
+      required: true
+  - type: textarea
+    id: attribution
+    attributes:
+      label: Attribution and reproducibility plan
+      description: Explain authorship expectations, public records, code/data release, and negative-result reporting.
+    validations:
+      required: true

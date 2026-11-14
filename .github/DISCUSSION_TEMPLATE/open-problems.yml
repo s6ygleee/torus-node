@@ -1,0 +1,42 @@
+title: "[Open Problem] "
+labels: [open-problem]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this category for new attacks, partial results, counterexamples, and precise formulations of unresolved questions.
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: State a question that can in principle be proved, disproved, constructed, or measured.
+    validations:
+      required: true
+  - type: textarea
+    id: assumptions
+    attributes:
+      label: Definitions and assumptions
+      description: Specify the mathematical setting and every premise being used.
+    validations:
+      required: true
+  - type: textarea
+    id: status
+    attributes:
+      label: Current status
+      description: Explain why existing finite, conditional, or comparison-model results do not close the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Proposed approach or partial result
+      description: Include a completion or falsification criterion.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Relevant references
+      description: Link manuscript sections, declarations, data, and prior literature.
+    validations:
+      required: true

@@ -1,0 +1,33 @@
+title: "[General] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this category for cross-cutting scientific discussion that does not yet belong to a narrower research area.
+  - type: textarea
+    id: topic
+    attributes:
+      label: Topic
+      description: State the question, observation, or connection you want to discuss.
+      placeholder: What should the research community examine?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and references
+      description: Link relevant manuscript sections, declarations, calculations, or literature.
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Claim status
+      options:
+        - Question or interpretation
+        - Established finite result
+        - Conditional result
+        - Assumption or conjecture
+        - Open physical problem
+    validations:
+      required: true
