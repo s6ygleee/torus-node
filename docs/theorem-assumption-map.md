@@ -29,6 +29,6 @@ This map is a public orientation document, not a replacement for the manuscript,
 
 ## Primary records
 
-- Preprint: <https://doi.org/10.20944/preprints202611.0941.v1>
+- Preprint: <https://www.preprints.org/manuscript/202611.0941>
 - Lean repository: <https://github.com/s6ygleee/torus-node-lean4>
-- Versioned reproducibility archive: <https://doi.org/10.5281/zenodo.23863514>
+- Versioned reproducibility archive: <https://doi.org/10.5281/zenodo.24229820>

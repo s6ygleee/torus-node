@@ -1,4 +1,4 @@
-# Torus-Node Research Initiative
+﻿# Torus-Node Research Initiative
 
 Public research portal for **Emergent Spacetime, Gravity, and Gauge Structure**, initiated by Youngik (Tom) Lee.
 
@@ -8,12 +8,17 @@ This repository is intentionally separate from [`torus-node-lean4`](https://gith
 
 The current manuscript describes a finite conditional model. The unrestricted Poisson-source-to-continuum identification and several physical hypotheses remain open. The Preprints.org version is a preprint and has not undergone peer review.
 
-- Paper: <https://doi.org/10.20944/preprints202611.0941.v1>
+- Latest preprint: Version 2, posted 2026-11-16 (not peer reviewed): <https://www.preprints.org/manuscript/202611.0941>
 - Lean 4 and reproducibility repository: <https://github.com/s6ygleee/torus-node-lean4>
-- Archived Lean release: <https://doi.org/10.5281/zenodo.23863514>
+- Archived Lean release: Version 1.1.0, published 2026-11-14 20:31 UTC: <https://doi.org/10.5281/zenodo.24229820>
 
 The originally supplied Zenodo identifier `10.5281/zenodo.23819696` returned “persistent identifier is not registered” when checked on 2026-11-15, so it is not presented as a publication on this site.
 
+## Weekly metadata automation
+
+The workflow at .github/workflows/weekly-research-metadata.yml runs every Monday at 03:17 UTC and can also be started manually. It checks the official Zenodo API, the GitHub Releases API, and registered Preprints.org DOIs through Crossref. Verified newer records update the static publication cards, UTC timestamps, structured data, and sitemap. A source failure retains the last verified metadata rather than deleting or downgrading it.
+
+Run the same update locally with these commands: python tools/update_research_metadata.py, python tools/update_seo.py, and python tools/check_site.py.
 ## Local preview
 
 No build step or package installation is required. Serve the repository root with any static HTTP server, for example:
