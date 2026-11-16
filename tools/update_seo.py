@@ -15,7 +15,7 @@ PAGES = {
     "index.html": ("Torus-Node Research Initiative", "An independent research portal for the Torus-Node program on emergent spacetime, gravity, gauge structure, and formal verification.", ""),
     "research.html": ("Research Framework · Torus-Node", "Research framework, assumptions, conditional results, and open interfaces of the Torus-Node program.", "research.html"),
     "publications.html": ("Publications · Torus-Node", "Verified publication metadata, software records, and citation guidance for the Torus-Node research program.", "publications.html"),
-    "research-record.html": ("Research Record · Torus-Node", "A provenance map connecting Torus-Node preprint versions, Lean 4 formalisation, Zenodo archives, authorship, release dates, and update policy.", "research-record.html"),
+    "research-record.html": ("Research Record · Torus-Node", "A versioned provenance network connecting Torus-Node publications, formal releases, and independent research by other authors through explicit references.", "research-record.html"),
     "verification.html": ("Verification · Torus-Node", "Verification scope, Lean 4 resources, reproducibility workflow, and limitations for the Torus-Node research program.", "verification.html"),
     "open-problems.html": ("Open Research Problems · Torus-Node", "Open mathematical and physical research problems in continuum reconstruction, reflection positivity, gauge structure, gravity, and phenomenology.", "open-problems.html"),
     "community.html": ("Research Community · Torus-Node", "GitHub Discussions, Issues, Pull Requests, and evidence-based scientific exchange for the Torus-Node research program.", "community.html"),
@@ -94,6 +94,33 @@ def graph(filename: str, title: str, description: str, url: str) -> dict:
             "programmingLanguage": "Lean",
             "license": "https://opensource.org/license/mit",
             "isAccessibleForFree": True,
+        })
+    if filename == "research-record.html":
+        registry = json.loads((ROOT / "assets/data/research-records.json").read_text(encoding="utf-8-sig"))
+        list_items = []
+        position = 1
+        for series in registry["series"]:
+            schema_type = "ScholarlyArticle" if series["record_type"] == "Scholarly preprint" else "SoftwareSourceCode"
+            for version_record in series["versions"]:
+                work = {
+                    "@type": schema_type,
+                    "name": f"{series['title']} — version {version_record['version']}",
+                    "author": [{"@type": "Person", "name": author} for author in version_record["authors"]],
+                    "datePublished": version_record["published_at"],
+                    "version": version_record["version"],
+                    "url": version_record["url"],
+                    "isAccessibleForFree": True,
+                }
+                if version_record.get("doi"):
+                    work["identifier"] = "https://doi.org/" + version_record["doi"]
+                list_items.append({"@type": "ListItem", "position": position, "item": work})
+                position += 1
+        items.append({
+            "@type": "ItemList",
+            "@id": url + "#versioned-records",
+            "name": "Torus-Node versioned research records",
+            "numberOfItems": len(list_items),
+            "itemListElement": list_items,
         })
     return {"@context": "https://schema.org", "@graph": items}
 

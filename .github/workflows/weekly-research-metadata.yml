@@ -24,6 +24,10 @@ jobs:
           python-version: "3.12"
       - name: Check official research records and refresh static pages
         run: python tools/update_research_metadata.py
+      - name: Synchronize versioned research registry
+        run: python tools/sync_research_records.py
+      - name: Render research relationship network
+        run: python tools/render_research_record.py
       - name: Refresh discoverability metadata
         run: python tools/update_seo.py
       - name: Validate site
@@ -37,6 +41,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/data/research-metadata.json *.html sitemap.xml README.md docs/theorem-assumption-map.md
+          git add assets/data/research-metadata.json assets/data/research-records.json *.html sitemap.xml README.md docs/theorem-assumption-map.md
           git commit -m "Update verified research metadata"
           git push

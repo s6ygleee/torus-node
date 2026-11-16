@@ -1,4 +1,4 @@
-﻿# Torus-Node Research Initiative
+# Torus-Node Research Initiative
 
 Public research portal for **Emergent Spacetime, Gravity, and Gauge Structure**, initiated by Youngik (Tom) Lee.
 
@@ -18,7 +18,8 @@ The originally supplied Zenodo identifier `10.5281/zenodo.23819696` returned “
 
 The workflow at .github/workflows/weekly-research-metadata.yml runs every Monday at 03:17 UTC and can also be started manually. It checks the official Zenodo API, the GitHub Releases API, and registered Preprints.org DOIs through Crossref. Verified newer records update the static publication cards, UTC timestamps, structured data, and sitemap. A source failure retains the last verified metadata rather than deleting or downgrading it.
 
-Run the same update locally with these commands: python tools/update_research_metadata.py, python tools/update_seo.py, and python tools/check_site.py.
+Run the same update locally with these commands: python tools/update_research_metadata.py, python tools/sync_research_records.py, python tools/render_research_record.py, python tools/update_seo.py, and python tools/check_site.py.
+
 ## Local preview
 
 No build step or package installation is required. Serve the repository root with any static HTTP server, for example:
@@ -35,6 +36,7 @@ Then open `http://localhost:8000/`. Opening `index.html` directly also works for
 - `assets/css/styles.css`: shared responsive design system
 - `assets/js/main.js`: navigation and progressive enhancement
 - `assets/js/problems.js`: data-driven open-problem catalogue
+- `assets/data/research-records.json`: versioned research series, authors, dates, and cross-reference relations
 - `docs/`: research roadmap and theorem–assumption map
 - `.github/ISSUE_TEMPLATE/`: scientific contribution forms
 - `.github/DISCUSSION_TEMPLATE/`: structured forms for the seven research Discussion categories

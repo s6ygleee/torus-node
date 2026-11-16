@@ -1,5 +1,5 @@
 name: Independent research result
-description: Submit an external calculation, proof, replication, or publication for review and attribution.
+description: Submit an external calculation, proof, replication, critique, counterexample, or publication for review and attribution.
 title: "[Independent result]: "
 labels: [independent-result]
 body:
@@ -12,7 +12,41 @@ body:
     id: authors
     attributes:
       label: Authors and attribution
-      description: List names as they should appear. Add affiliations only with authorization.
+      description: List every author as the public record shows. Add affiliations only with authorization.
+    validations: {required: true}
+  - type: input
+    id: version
+    attributes:
+      label: Version, edition, or release
+      description: Give the exact version, revision, tag, or commit represented by this submission.
+    validations: {required: true}
+  - type: input
+    id: publication_date
+    attributes:
+      label: Publication or release date
+      description: Use ISO 8601 and include UTC time when the source supplies it.
+      placeholder: "2026-11-16 or 2026-11-16T12:34:56Z"
+    validations: {required: true}
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Reference relation
+      description: Choose the direction from this submitted work to the target record.
+      options:
+        - cites
+        - extends
+        - verifies
+        - challenges
+        - supplies a counterexample
+        - reproduces
+        - corrects
+    validations: {required: true}
+  - type: input
+    id: target
+    attributes:
+      label: Exact target record
+      description: Identify the referenced Torus-Node paper, software version, DOI, theorem, or another external record.
+      placeholder: "Preprint v2, Zenodo v1.1.0, DOI, or stable URL"
     validations: {required: true}
   - type: textarea
     id: claim
@@ -24,7 +58,13 @@ body:
     id: record
     attributes:
       label: Public record
-      description: Link a DOI, repository, preprint, or archived package.
+      description: Link a DOI, repository, preprint, or archived package with stable public metadata.
+    validations: {required: true}
+  - type: textarea
+    id: references
+    attributes:
+      label: Reference evidence
+      description: Quote or link the exact section where this work references the target, or explain the technical relationship.
     validations: {required: true}
   - type: textarea
     id: reproduce
