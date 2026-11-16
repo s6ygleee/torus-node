@@ -86,7 +86,7 @@ def refresh(data: dict) -> tuple[dict, list[str]]:
         posted_parts = message.get("posted", message.get("published", {})).get("date-parts", [[]])[0]
         posted = "-".join(f"{part:02d}" if index else str(part) for index, part in enumerate(posted_parts)) if posted_parts else preprint["posted_date"]
         title = message.get("title", [preprint["title"]])[0]
-submitted_parts = message.get("accepted", {}).get("date-parts", [[]])[0]
+        submitted_parts = message.get("accepted", {}).get("date-parts", [[]])[0]
         submitted = "-".join(f"{part:02d}" if index else str(part) for index, part in enumerate(submitted_parts)) if submitted_parts else preprint.get("submitted_date")
         authors = [" ".join(part for part in (author.get("given"), author.get("family")) if part) for author in message.get("author", [])]
         preprint.update({"version": version, "doi": doi, "posted_date": posted, "submitted_date": submitted, "title": title, "authors": authors})
