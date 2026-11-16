@@ -1,0 +1,42 @@
+name: Weekly research metadata update
+
+on:
+  schedule:
+    - cron: "17 03 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-research-metadata
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out portal
+        uses: actions/checkout@v4
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check official research records and refresh static pages
+        run: python tools/update_research_metadata.py
+      - name: Refresh discoverability metadata
+        run: python tools/update_seo.py
+      - name: Validate site
+        run: python tools/check_site.py
+      - name: Commit verified metadata changes
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No verified metadata changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/data/research-metadata.json *.html sitemap.xml README.md docs/theorem-assumption-map.md
+          git commit -m "Update verified research metadata"
+          git push

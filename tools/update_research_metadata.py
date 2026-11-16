@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Refresh verified Torus-Node publication metadata and render static HTML.
 
 Only official machine-readable records are accepted automatically. A source
@@ -126,6 +126,51 @@ def render(data: dict) -> None:
     index_software = f'''          <article class="card reveal"><span class="tag preprint">Software &amp; data · v{s["version"]}</span><h3 style="margin-top:1rem">Lean 4 formalisation and reproducibility data</h3><p>Youngik (Tom) Lee · Zenodo · released <time datetime="{s["published_at"]}">{software_date}, {software_time}</time> · open verification archive.</p><p><a href="{software_doi_url}">DOI {s["doi"]}</a></p></article>'''
     index = marked(index, "INDEX_SOFTWARE", index_software, r'\s*<article class="card reveal"><span class="tag preprint">Software.*?</article>')
     index = index.replace("https://doi.org/10.20944/preprints202611.0941.v1\">Read the preprint", f"{preprint_link}\">Read the preprint")
+    record_map = f'''    <section class="record-banner section compact" aria-labelledby="record-map-title">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div><span class="kicker">Research record map</span><h2 id="record-map-title">How the paper, formal code, and archives connect</h2></div>
+          <p>A versioned path from the primary preprint to independently replayable code and an immutable archive. Dates below use UTC where the source supplies an exact time.</p>
+        </div>
+        <div class="record-tree reveal">
+          <article class="record-node record-primary">
+            <span class="record-type">Primary research paper · Preprint</span>
+            <h3>A Torus-Node Model for Emergent Spacetime, Gravity, and Gauge Structure</h3>
+            <p class="record-byline">Youngik (Tom) Lee · Version {p["version"]} · posted <time datetime="{p["posted_date"]}">{display_date(p["posted_date"])}</time></p>
+            <p>The main scientific narrative and claim boundaries. It remains a non-peer-reviewed preprint.</p>
+            <a href="{preprint_link}">Open the latest preprint <span aria-hidden="true">→</span></a>
+          </article>
+          <div class="record-branches" aria-label="Connected research records">
+            <article class="record-node">
+              <span class="record-type">Version history</span>
+              <h3>Version 1 → Version {p["version"]}</h3>
+              <p><time datetime="2026-11-10">10 Nov 2026</time> → <time datetime="{p["posted_date"]}">{display_date(p["posted_date"])}</time></p>
+              <p>The manuscript record is revised in place; the portal points readers to its latest verified version.</p>
+            </article>
+            <article class="record-node">
+              <span class="record-type">Living formal source</span>
+              <h3>Lean 4 repository</h3>
+              <p>Youngik (Tom) Lee · GitHub · latest tag v{s["version"]}</p>
+              <p>Machine-checkable finite modules and reproducibility material connected to the paper. Continuum claims are outside the verified scope unless explicitly formalized.</p>
+              <a href="{s["repository_url"]}">Inspect the repository <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="record-node">
+              <span class="record-type">Immutable software archive</span>
+              <h3>Zenodo release v{s["version"]}</h3>
+              <p>Youngik (Tom) Lee · published <time datetime="{s["published_at"]}">{software_date}, {software_time}</time></p>
+              <p>A citable snapshot of the Lean release and reproducibility data.</p>
+              <a href="{software_doi_url}">DOI {s["doi"]} <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+          <aside class="record-update">
+            <span class="record-pulse" aria-hidden="true"></span>
+            <div><strong>Weekly metadata update</strong><p>Every Monday at 03:17 UTC, the portal checks Zenodo, GitHub Releases, and registered Preprints.org DOI metadata. Only verified newer records replace the current entries.</p></div>
+            <a class="button" href="publications.html">View publication details</a>
+          </aside>
+        </div>
+      </div>
+    </section>'''
+    index = marked(index, "RECORD_MAP", record_map, r's*<section class="record-banner.*?</section>')
     (ROOT / "index.html").write_text(index, encoding="utf-8")
 
     pubs = (ROOT / "publications.html").read_text(encoding="utf-8")
@@ -139,8 +184,8 @@ def render(data: dict) -> None:
         "\n<!-- AUTO:PUBLICATIONS_SOFTWARE:END -->\n"
     )
     pubs, count = re.subn(
-        r'(<section class="section"><div class="shell">).*?(\s*<div class="callout warning">)',
-        lambda match: match.group(1) + "\n" + rendered_publications + match.group(2),
+        r'(<section class="section"><div class="shell">).*?(?=<div class="callout warning">)',
+        lambda match: match.group(1) + "\n" + rendered_publications + "  ",
         pubs,
         count=1,
         flags=re.S,
@@ -189,8 +234,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
-
-
-
-
