@@ -170,7 +170,10 @@ def render(data: dict) -> None:
         </div>
       </div>
     </section>'''
-    index = marked(index, "RECORD_MAP", record_map, r's*<section class="record-banner.*?</section>')
+    record_path = ROOT / "research-record.html"
+    record_page = record_path.read_text(encoding="utf-8")
+    record_page = marked(record_page, "RECORD_MAP", record_map, r'\s*<section class="record-banner.*?</section>')
+    record_path.write_text(record_page, encoding="utf-8")
     (ROOT / "index.html").write_text(index, encoding="utf-8")
 
     pubs = (ROOT / "publications.html").read_text(encoding="utf-8")

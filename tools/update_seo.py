@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Render consistent discoverability metadata into the static pages."""
 from __future__ import annotations
 import html
@@ -15,6 +15,7 @@ PAGES = {
     "index.html": ("Torus-Node Research Initiative", "An independent research portal for the Torus-Node program on emergent spacetime, gravity, gauge structure, and formal verification.", ""),
     "research.html": ("Research Framework · Torus-Node", "Research framework, assumptions, conditional results, and open interfaces of the Torus-Node program.", "research.html"),
     "publications.html": ("Publications · Torus-Node", "Verified publication metadata, software records, and citation guidance for the Torus-Node research program.", "publications.html"),
+    "research-record.html": ("Research Record · Torus-Node", "A provenance map connecting Torus-Node preprint versions, Lean 4 formalisation, Zenodo archives, authorship, release dates, and update policy.", "research-record.html"),
     "verification.html": ("Verification · Torus-Node", "Verification scope, Lean 4 resources, reproducibility workflow, and limitations for the Torus-Node research program.", "verification.html"),
     "open-problems.html": ("Open Research Problems · Torus-Node", "Open mathematical and physical research problems in continuum reconstruction, reflection positivity, gauge structure, gravity, and phenomenology.", "open-problems.html"),
     "community.html": ("Research Community · Torus-Node", "GitHub Discussions, Issues, Pull Requests, and evidence-based scientific exchange for the Torus-Node research program.", "community.html"),
