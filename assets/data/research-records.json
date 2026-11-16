@@ -1,98 +1,110 @@
 {
-  "schema_version": 1,
-  "last_content_update": "2026-11-16",
-  "series": [
-    {
-      "id": "torus-node-preprint",
-      "label": "Primary manuscript series",
-      "record_type": "Scholarly preprint",
-      "title": "A Torus-Node Model for Emergent Spacetime, Gravity, and Gauge Structure: D4 Moves, Level-3 Commensurability, the S4 Ordered-History Algebra, and a Poisson-Source Interface",
-      "description": "The versioned primary research narrative. Each version retains its own author, submission date, posting date, status, and persistent link.",
-      "primary": true,
-      "versions": [
-        {
-          "id": "preprint-v1",
-          "version": "1",
-          "authors": [
-            "Youngik (Tom) Lee"
-          ],
-          "submitted_date": "2026-11-06",
-          "published_at": "2026-11-10",
-          "date_precision": "date",
-          "venue": "Preprints.org",
-          "doi": "10.20944/preprints202611.0941.v1",
-          "url": "https://doi.org/10.20944/preprints202611.0941.v1",
-          "status": "Superseded by Version 2",
-          "peer_reviewed": false,
-          "current": false
-        },
-        {
-          "id": "preprint-v2",
-          "version": "2",
-          "authors": [
-            "Youngik (Tom) Lee"
-          ],
-          "submitted_date": "2026-11-15",
-          "published_at": "2026-11-16",
-          "date_precision": "date",
-          "venue": "Preprints.org",
-          "doi": null,
-          "url": "https://www.preprints.org/manuscript/202611.0941",
-          "status": "Current version",
-          "peer_reviewed": false,
-          "current": true,
-          "note": "The version-specific DOI is not shown until it resolves through a DOI metadata service."
-        }
-      ]
-    },
-    {
-      "id": "torus-node-lean",
-      "label": "Formalisation and reproducibility series",
-      "record_type": "Software and data",
-      "title": "Torus-Node Lean 4 formalisation and reproducibility data",
-      "description": "Versioned Lean 4 source, certificate records, calculations, and reproducibility data. Each Zenodo version is an immutable citable snapshot.",
-      "primary": false,
-      "versions": [
-        {
-          "id": "lean-v1.0.0",
-          "version": "1.0.0",
-          "authors": [
-            "Youngik (Tom) Lee"
-          ],
-          "published_at": "2026-11-01T17:18:14Z",
-          "date_precision": "second",
-          "venue": "Zenodo",
-          "doi": "10.5281/zenodo.23863514",
-          "url": "https://doi.org/10.5281/zenodo.23863514",
-          "release_url": "https://github.com/s6ygleee/torus-node-lean4/releases/tag/v1.0.0",
-          "status": "Archived release",
-          "current": false
-        },
-        {
-          "id": "lean-v1.1.0",
-          "version": "1.1.0",
-          "authors": [
-            "Lee, Youngik (Tom)"
-          ],
-          "published_at": "2026-11-14T20:31:04.017494Z",
-          "date_precision": "second",
-          "venue": "Zenodo",
-          "doi": "10.5281/zenodo.24229820",
-          "url": "https://doi.org/10.5281/zenodo.24229820",
-          "release_url": "https://github.com/s6ygleee/torus-node-lean4/releases/tag/v1.1.0",
-          "status": "Current archived release",
-          "current": true
-        }
-      ]
-    }
-  ],
-  "series_relations": [
-    {
-      "source": "torus-node-lean",
-      "target": "torus-node-preprint",
-      "type": "formalises-and-documents",
-      "label": "Finite formalisation and reproducibility record associated with the manuscript series"
-    }
-  ],
-  "external_works": []
+    "schema_version":  1,
+    "last_content_update":  "2026-11-16",
+    "series":  [
+                   {
+                       "id":  "torus-node-preprint",
+                       "label":  "Primary manuscript series",
+                       "record_type":  "Scholarly preprint",
+                       "title":  "A Torus-Node Model for Emergent Spacetime, Gravity, and Gauge Structure: D4 Moves, Level-3 Commensurability, the S4 Ordered-History Algebra, and a Poisson-Source Interface",
+                       "description":  "The versioned primary research narrative. Each version retains its own author, submission date, posting date, status, and persistent link.",
+                       "primary":  true,
+                       "versions":  [
+                                        {
+                                            "id":  "preprint-v1",
+                                            "version":  "1",
+                                            "authors":  [
+                                                            "Youngik (Tom) Lee"
+                                                        ],
+                                            "submitted_date":  "2026-11-06",
+                                            "published_at":  "2026-11-10",
+                                            "date_precision":  "date",
+                                            "venue":  "Preprints.org",
+                                            "doi":  "10.20944/preprints202611.0941.v1",
+                                            "url":  "https://doi.org/10.20944/preprints202611.0941.v1",
+                                            "status":  "Superseded by Version 2",
+                                            "peer_reviewed":  false,
+                                            "current":  false
+                                        },
+                                        {
+                                            "id":  "preprint-v2",
+                                            "version":  "2",
+                                            "authors":  [
+                                                            "Youngik (Tom) Lee"
+                                                        ],
+                                            "submitted_date":  "2026-11-15",
+                                            "published_at":  "2026-11-16",
+                                            "date_precision":  "date",
+                                            "venue":  "Preprints.org",
+                                            "doi":  null,
+                                            "url":  "https://www.preprints.org/manuscript/202611.0941",
+                                            "status":  "Current version",
+                                            "peer_reviewed":  false,
+                                            "current":  true,
+                                            "note":  "The version-specific DOI is not shown until it resolves through a DOI metadata service."
+                                        }
+                                    ]
+                   },
+                   {
+                       "id":  "torus-node-lean",
+                       "label":  "Formalisation and reproducibility series",
+                       "record_type":  "Software and data",
+                       "title":  "Torus-Node Lean 4 formalisation and reproducibility data",
+                       "description":  "Versioned Lean 4 source, certificate records, calculations, and reproducibility data. Each Zenodo version is an immutable citable snapshot.",
+                       "primary":  false,
+                       "versions":  [
+                                        {
+                                            "id":  "lean-v1.0.0",
+                                            "version":  "1.0.0",
+                                            "authors":  [
+                                                            "Youngik (Tom) Lee"
+                                                        ],
+                                            "published_at":  "2026-11-01T17:18:14Z",
+                                            "date_precision":  "second",
+                                            "venue":  "Zenodo",
+                                            "doi":  "10.5281/zenodo.23863514",
+                                            "url":  "https://doi.org/10.5281/zenodo.23863514",
+                                            "release_url":  "https://github.com/s6ygleee/torus-node-lean4/releases/tag/v1.0.0",
+                                            "status":  "Archived release",
+                                            "current":  false
+                                        },
+                                        {
+                                            "id":  "lean-v1.1.0",
+                                            "version":  "1.1.0",
+                                            "authors":  [
+                                                            "Lee, Youngik (Tom)"
+                                                        ],
+                                            "published_at":  "2026-11-14T20:31:04.017494Z",
+                                            "date_precision":  "second",
+                                            "venue":  "Zenodo",
+                                            "doi":  "10.5281/zenodo.24229820",
+                                            "url":  "https://doi.org/10.5281/zenodo.24229820",
+                                            "release_url":  "https://github.com/s6ygleee/torus-node-lean4/releases/tag/v1.1.0",
+                                            "status":  "Current archived release",
+                                            "current":  true
+                                        }
+                                    ]
+                   }
+               ],
+    "series_relations":  [
+                             {
+                                 "source":  "torus-node-lean",
+                                 "target":  "torus-node-preprint",
+                                 "type":  "formalises-and-documents",
+                                 "label":  "Finite formalisation and reproducibility record associated with the manuscript series"
+                             }
+                         ],
+    "external_works":  [
+
+                       ],
+    "relation_types":  [
+                           "cites",
+                           "is cited by",
+                           "extends",
+                           "verifies",
+                           "challenges",
+                           "supplies a counterexample",
+                           "reproduces",
+                           "corrects"
+                       ]
 }

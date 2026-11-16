@@ -82,7 +82,7 @@ def render_series(series: dict) -> str:
 
 def render_external_work(work: dict) -> str:
     published_value, published_label = format_date(work["published_at"], work.get("date_precision", "date"))
-    relations = "".join(f'<span class="relation-badge">{esc(item["type"])}</span>' for item in work.get("relations", []))
+    relations = "".join(f'<span class="relation-badge">{esc(item["type"])} → {esc(item["target"])}</span>' for item in work.get("relations", []))
     version = f' · v{esc(work["version"])}' if work.get("version") else ""
     doi = f'<p class="external-doi">DOI: {esc(work["doi"])}</p>' if work.get("doi") else ""
     return f'''<article class="external-work" id="{esc(work["id"])}">
@@ -129,14 +129,36 @@ def render(data: dict) -> str:
         {external_html}
         <div class="relation-legend" aria-label="Supported reference relation types">
           <strong>Supported relations</strong>
-          <span>cites</span><span>is cited by</span><span>extends</span><span>verifies</span><span>challenges</span><span>supplies a counterexample</span>
+          {"".join(f"<span>{esc(relation_type)}</span>" for relation_type in data["relation_types"])}
         </div>
       </div>
     </section>'''
 
 
+def validate_data(data: dict) -> None:
+    version_ids = [version["id"] for series in data["series"] for version in series["versions"]]
+    external_ids = [work["id"] for work in data["external_works"]]
+    all_ids = version_ids + external_ids
+    if len(all_ids) != len(set(all_ids)):
+        raise ValueError("Research record IDs must be unique")
+    for series in data["series"]:
+        for version in series["versions"]:
+            if not version.get("authors") or not version.get("published_at") or not version.get("url"):
+                raise ValueError(f"Incomplete version record: {version.get('id')}")
+    known_targets = set(all_ids)
+    for work in data["external_works"]:
+        if not work.get("authors") or not work.get("published_at") or not work.get("url"):
+            raise ValueError(f"Incomplete external work: {work.get('id')}")
+        for relation in work.get("relations", []):
+            if relation.get("type") not in data["relation_types"]:
+                raise ValueError(f"Unsupported relation type: {relation.get('type')}")
+            if relation.get("target") not in known_targets:
+                raise ValueError(f"Unknown relation target: {relation.get('target')}")
+
+
 def main() -> int:
     data = json.loads(DATA.read_text(encoding="utf-8-sig"))
+    validate_data(data)
     page = PAGE.read_text(encoding="utf-8")
     generated = render(data)
     block = f"<!-- AUTO:RESEARCH_NETWORK:START -->\n{generated}\n<!-- AUTO:RESEARCH_NETWORK:END -->"
