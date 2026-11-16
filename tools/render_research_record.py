@@ -67,8 +67,7 @@ def render_version(version: dict, primary: bool) -> str:
 
 
 def render_series(series: dict) -> str:
-    versions = "
-".join(render_version(item, bool(series.get("primary"))) for item in series["versions"])
+    versions = "\n".join(render_version(item, bool(series.get("primary"))) for item in series["versions"])
     primary_class = " primary-series" if series.get("primary") else ""
     return f'''<article class="record-series{primary_class}" id="{esc(series["id"])}">
       <header class="series-header">
@@ -97,13 +96,11 @@ def render_external_work(work: dict) -> str:
 
 
 def render(data: dict) -> str:
-    series_html = "
-".join(render_series(series) for series in data["series"])
+    series_html = "\n".join(render_series(series) for series in data["series"])
     relation = data["series_relations"][0]
     series_labels = {series["id"]: series["label"] for series in data["series"]}
     if data["external_works"]:
-        external_html = '<div class="external-grid">' + "
-".join(render_external_work(work) for work in data["external_works"]) + "</div>"
+        external_html = '<div class="external-grid">' + "\n".join(render_external_work(work) for work in data["external_works"]) + "</div>"
     else:
         external_html = '''<div class="reference-empty">
           <span class="empty-symbol" aria-hidden="true">+</span>
@@ -142,9 +139,7 @@ def main() -> int:
     data = json.loads(DATA.read_text(encoding="utf-8-sig"))
     page = PAGE.read_text(encoding="utf-8")
     generated = render(data)
-    block = f"<!-- AUTO:RESEARCH_NETWORK:START -->
-{generated}
-<!-- AUTO:RESEARCH_NETWORK:END -->"
+    block = f"<!-- AUTO:RESEARCH_NETWORK:START -->\n{generated}\n<!-- AUTO:RESEARCH_NETWORK:END -->"
     pattern = r"<!-- AUTO:(?:RESEARCH_NETWORK|RECORD_MAP):START -->.*?<!-- AUTO:(?:RESEARCH_NETWORK|RECORD_MAP):END -->"
     page, count = re.subn(pattern, block, page, count=1, flags=re.S)
     if count != 1:

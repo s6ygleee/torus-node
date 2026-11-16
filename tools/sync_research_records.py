@@ -70,8 +70,7 @@ def main() -> int:
         item["status"] = "Archived release"
 
     registry["last_content_update"] = latest["last_content_update"]
-    rendered = json.dumps(registry, indent=2, ensure_ascii=False) + "
-"
+    rendered = json.dumps(registry, indent=2, ensure_ascii=False) + "\n"
     current = REGISTRY.read_text(encoding="utf-8-sig")
     if current != rendered:
         REGISTRY.write_text(rendered, encoding="utf-8")
