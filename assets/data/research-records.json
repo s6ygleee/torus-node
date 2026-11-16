@@ -13,7 +13,9 @@
         {
           "id": "preprint-v1",
           "version": "1",
-          "authors": ["Youngik (Tom) Lee"],
+          "authors": [
+            "Youngik (Tom) Lee"
+          ],
           "submitted_date": "2026-11-06",
           "published_at": "2026-11-10",
           "date_precision": "date",
@@ -27,7 +29,9 @@
         {
           "id": "preprint-v2",
           "version": "2",
-          "authors": ["Youngik (Tom) Lee"],
+          "authors": [
+            "Youngik (Tom) Lee"
+          ],
           "submitted_date": "2026-11-15",
           "published_at": "2026-11-16",
           "date_precision": "date",
@@ -52,7 +56,9 @@
         {
           "id": "lean-v1.0.0",
           "version": "1.0.0",
-          "authors": ["Youngik (Tom) Lee"],
+          "authors": [
+            "Youngik (Tom) Lee"
+          ],
           "published_at": "2026-11-01T17:18:14Z",
           "date_precision": "second",
           "venue": "Zenodo",
@@ -65,8 +71,10 @@
         {
           "id": "lean-v1.1.0",
           "version": "1.1.0",
-          "authors": ["Youngik (Tom) Lee"],
-          "published_at": "2026-11-14T20:31:04Z",
+          "authors": [
+            "Lee, Youngik (Tom)"
+          ],
+          "published_at": "2026-11-14T20:31:04.017494Z",
           "date_precision": "second",
           "venue": "Zenodo",
           "doi": "10.5281/zenodo.24229820",

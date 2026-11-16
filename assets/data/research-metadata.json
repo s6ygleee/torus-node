@@ -1,29 +1,29 @@
 {
-    "preprint":  {
-                     "title":  "A Torus-Node Model for Emergent Spacetime, Gravity, and Gauge Structure: D4 Moves, Level-3 Commensurability, the S4 Ordered-History Algebra, and a Poisson-Source Interface",
-                     "version":  2,
-                     "submitted_date":  "2026-11-15",
-                     "posted_date":  "2026-11-16",
-                     "landing_url":  "https://www.preprints.org/manuscript/202611.0941",
-                     "doi":  null,
-                     "previous_version_doi":  "10.20944/preprints202611.0941.v1",
-                     "peer_reviewed":  false,
-                     "authors":  [
-                                     "Youngik (Tom) Lee"
-                                 ]
-                 },
-    "software":  {
-                     "title":  "A Torus-Node Model for Emergent Spacetime, Gravity, and Gauge Structure: D4 Moves, Level-3 Commensurability, the S4 Ordered-History Algebra, and a Poisson-Source Interface",
-                     "version":  "1.1.0",
-                     "doi":  "10.5281/zenodo.24229820",
-                     "concept_doi":  "10.5281/zenodo.23863513",
-                     "published_at":  "2026-11-14T20:31:04.017494Z",
-                     "modified_at":  "2026-11-14T20:31:04.134249Z",
-                     "github_release_url":  "https://github.com/s6ygleee/torus-node-lean4/releases/tag/v1.1.0",
-                     "repository_url":  "https://github.com/s6ygleee/torus-node-lean4",
-                     "authors":  [
-                                     "Youngik (Tom) Lee"
-                                 ]
-                 },
-    "last_content_update":  "2026-11-16"
+  "preprint": {
+    "title": "A Torus-Node Model for Emergent Spacetime, Gravity, and Gauge Structure: D4 Moves, Level-3 Commensurability, the S4 Ordered-History Algebra, and a Poisson-Source Interface",
+    "version": 2,
+    "submitted_date": "2026-11-15",
+    "posted_date": "2026-11-16",
+    "landing_url": "https://www.preprints.org/manuscript/202611.0941",
+    "doi": null,
+    "previous_version_doi": "10.20944/preprints202611.0941.v1",
+    "peer_reviewed": false,
+    "authors": [
+      "Youngik (Tom) Lee"
+    ]
+  },
+  "software": {
+    "title": "A Torus-Node Model for Emergent Spacetime, Gravity, and Gauge Structure: D4 Moves, Level-3 Commensurability, the S4 Ordered-History Algebra, and a Poisson-Source Interface",
+    "version": "1.1.0",
+    "doi": "10.5281/zenodo.24229820",
+    "concept_doi": "10.5281/zenodo.23863513",
+    "published_at": "2026-11-14T20:31:04.017494Z",
+    "modified_at": "2026-11-14T20:31:04.134249Z",
+    "github_release_url": "https://github.com/s6ygleee/torus-node-lean4/releases/tag/v1.1.0",
+    "repository_url": "https://github.com/s6ygleee/torus-node-lean4",
+    "authors": [
+      "Lee, Youngik (Tom)"
+    ]
+  },
+  "last_content_update": "2026-11-16"
 }
