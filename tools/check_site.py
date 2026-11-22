@@ -6,6 +6,9 @@ from __future__ import annotations
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlparse
+import json
+import re
+import xml.etree.ElementTree as ET
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -63,7 +66,7 @@ def main() -> int:
 
     expected = {
         "index.html", "research.html", "publications.html", "verification.html",
-        "open-problems.html", "community.html", "contribute.html", "about.html", "404.html",
+        "open-problems.html", "community.html", "contribute.html", "about.html", "updates.html", "404.html",
     }
     missing_pages = sorted(expected - {path.name for path in html_files})
     if missing_pages:
@@ -72,7 +75,8 @@ def main() -> int:
     for file in html_files:
         doc = Document()
         try:
-            doc.feed(file.read_text(encoding="utf-8"))
+            raw = file.read_text(encoding="utf-8")
+            doc.feed(raw)
         except Exception as exc:  # pragma: no cover - diagnostic path
             errors.append(f"{file.name}: HTML parse failed: {exc}")
             continue
@@ -85,6 +89,21 @@ def main() -> int:
             errors.append(f"{file.name}: missing viewport metadata")
         if file.name != "404.html" and not doc.description:
             errors.append(f"{file.name}: missing description metadata")
+        if file.name not in {"index.html", "404.html"} and "BreadcrumbList" not in raw:
+            errors.append(f"{file.name}: missing BreadcrumbList structured data")
+        if file.name != "404.html":
+            blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', raw, flags=re.S)
+            if not blocks:
+                errors.append(f"{file.name}: missing JSON-LD block")
+            for block in blocks:
+                try:
+                    json.loads(block)
+                except json.JSONDecodeError as exc:
+                    errors.append(f"{file.name}: invalid JSON-LD: {exc}")
+        if file.name == "publications.html":
+            for meta_name in ("citation_title", "citation_author", "citation_publication_date"):
+                if f'name="{meta_name}"' not in raw:
+                    errors.append(f"{file.name}: missing {meta_name} metadata")
         duplicates = sorted({item for item in doc.ids if doc.ids.count(item) > 1})
         if duplicates:
             errors.append(f"{file.name}: duplicate ids: {duplicates}")
@@ -108,10 +127,16 @@ def main() -> int:
                 if fragment not in target_doc.ids and target.name != "open-problems.html":
                     errors.append(f"{file.name}: missing fragment {raw!r}")
 
-    required_files = [ROOT / ".nojekyll", ROOT / "robots.txt", ROOT / "sitemap.xml"]
+    required_files = [ROOT / ".nojekyll", ROOT / "robots.txt", ROOT / "sitemap.xml", ROOT / "feed.xml", ROOT / "CITATION.cff", ROOT / "docs/citations.md"]
     for required in required_files:
         if not required.exists():
             errors.append(f"Missing deployment file: {required.relative_to(ROOT)}")
+    for xml_file in (ROOT / "sitemap.xml", ROOT / "feed.xml"):
+        if xml_file.exists():
+            try:
+                ET.parse(xml_file)
+            except ET.ParseError as exc:
+                errors.append(f"{xml_file.name}: XML parse failed: {exc}")
 
     if errors:
         print("SITE CHECK FAILED")

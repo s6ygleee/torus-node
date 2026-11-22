@@ -28,6 +28,8 @@ jobs:
         run: python tools/sync_research_records.py
       - name: Render research relationship network
         run: python tools/render_research_record.py
+      - name: Render updates page and Atom feed
+        run: python tools/render_updates.py
       - name: Refresh discoverability metadata
         run: python tools/update_seo.py
       - name: Validate site
@@ -41,6 +43,6 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/data/research-metadata.json assets/data/research-records.json *.html sitemap.xml README.md docs/theorem-assumption-map.md
+          git add assets/data/research-metadata.json assets/data/research-records.json *.html feed.xml sitemap.xml README.md CITATION.cff docs/citations.md docs/theorem-assumption-map.md
           git commit -m "Update verified research metadata"
           git push

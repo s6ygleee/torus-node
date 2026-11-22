@@ -5,30 +5,34 @@
   <id>https://s6ygleee.github.io/torus-node/updates.html</id>
   <link rel="alternate" href="https://s6ygleee.github.io/torus-node/updates.html"/>
   <link rel="self" type="application/atom+xml" href="https://s6ygleee.github.io/torus-node/feed.xml"/>
-  <updated>2026-11-22T12:12:15Z</updated>
+  <updated>2026-11-22T13:09:07Z</updated>
   <author><name>Youngik (Tom) Lee</name></author>
   <entry>
-    <title>Search vocabulary and research context</title>
-    <id>https://s6ygleee.github.io/torus-node/updates.html#portal-2026-11-22</id>
-    <updated>2026-11-22T12:12:15Z</updated>
-    <published>2026-11-22T12:12:15Z</published>
-    <link href="https://s6ygleee.github.io/torus-node/updates.html#portal-2026-11-22"/>
-    <summary>Added bounded connections among torus theory, the Torus-Node model, grand unified theory (GUT), and theory of everything (TOE), with updated SEO metadata and responsive status cards.</summary>
+    <title>A Torus-Node Model for Emergent Spacetime, Gravity, and Gauge Structure: D4 Moves, Level-3 Commensurability, the S4 Ordered-History Algebra, and a Poisson-Source Interface — version 2</title>
+    <id>https://www.preprints.org/manuscript/202611.0941</id>
+    <updated>2026-11-22T13:09:07Z</updated>
+    <link href="https://www.preprints.org/manuscript/202611.0941"/>
+    <summary>Preprints.org; published 16 November 2026. Status: Current version. The source record provides a calendar date but no publication time.</summary>
   </entry>
   <entry>
-    <title>Lean 4 formalisation and reproducibility data v1.1.0</title>
+    <title>Torus-Node Lean 4 formalisation and reproducibility data — version 1.1.0</title>
     <id>https://doi.org/10.5281/zenodo.24229820</id>
     <updated>2026-11-14T20:31:04.017494Z</updated>
-    <published>2026-11-14T20:31:04.017494Z</published>
     <link href="https://doi.org/10.5281/zenodo.24229820"/>
-    <summary>Immutable Zenodo archive of Lean 4 sources, certificates, calculations, and reproducibility material.</summary>
+    <summary>Zenodo; published 14 November 2026, 20:31 UTC. Status: Current archived release.</summary>
   </entry>
   <entry>
-    <title>Lean 4 formalisation and reproducibility data v1.0.0</title>
+    <title>A Torus-Node Model for Emergent Spacetime, Gravity, and Gauge Structure: D4 Moves, Level-3 Commensurability, the S4 Ordered-History Algebra, and a Poisson-Source Interface — version 1</title>
+    <id>https://doi.org/10.20944/preprints202611.0941.v1</id>
+    <updated>2026-11-22T13:09:07Z</updated>
+    <link href="https://doi.org/10.20944/preprints202611.0941.v1"/>
+    <summary>Preprints.org; published 10 November 2026. Status: Superseded by Version 2. The source record provides a calendar date but no publication time.</summary>
+  </entry>
+  <entry>
+    <title>Torus-Node Lean 4 formalisation and reproducibility data — version 1.0.0</title>
     <id>https://doi.org/10.5281/zenodo.23863514</id>
     <updated>2026-11-01T17:18:14Z</updated>
-    <published>2026-11-01T17:18:14Z</published>
     <link href="https://doi.org/10.5281/zenodo.23863514"/>
-    <summary>Archived baseline release retained as a separate citable version.</summary>
+    <summary>Zenodo; published 1 November 2026, 17:18 UTC. Status: Archived release.</summary>
   </entry>
 </feed>

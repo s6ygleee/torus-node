@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use the Torus-Node portal or its public research records, please cite the relevant preprint or immutable software release."
+title: "Torus-Node Research Initiative"
+type: software
+authors:
+  - family-names: Lee
+    given-names: "Youngik (Tom)"
+repository-code: "https://github.com/s6ygleee/torus-node"
+url: "https://s6ygleee.github.io/torus-node/"
+version: "2026.11.22"
+date-released: 2026-11-22
+keywords:
+  - emergent spacetime
+  - quantum gravity
+  - torus theory
+  - formal verification
+  - Lean 4
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24229820"
+    description: "Torus-Node Lean 4 formalisation and reproducibility data v1.1.0"
+preferred-citation:
+  type: article
+  title: "A Torus-Node Model for Emergent Spacetime, Gravity, and Gauge Structure"
+  authors:
+    - family-names: Lee
+      given-names: "Youngik (Tom)"
+  year: 2026
+  url: "https://www.preprints.org/manuscript/202611.0941"
+  notes: "Version 2; not peer reviewed."
