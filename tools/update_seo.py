@@ -12,8 +12,8 @@ IMAGE = BASE + "assets/images/torus-node-social.png"
 DATA = json.loads((ROOT / "assets/data/research-metadata.json").read_text(encoding="utf-8-sig"))
 
 PAGES = {
-    "index.html": ("Torus-Node Research Initiative", "An independent research portal for the Torus-Node program on emergent spacetime, gravity, gauge structure, and formal verification.", ""),
-    "research.html": ("Research Framework · Torus-Node", "Research framework, assumptions, conditional results, and open interfaces of the Torus-Node program.", "research.html"),
+    "index.html": ("Torus-Node Research | Emergent Spacetime & Quantum Gravity", "Independent Torus-Node research on emergent spacetime, quantum gravity, gauge structure and grand unification, with a preprint and Lean 4 verification.", ""),
+    "research.html": ("Torus-Node Framework | Quantum Gravity & Grand Unification", "Definitions, assumptions and open interfaces in Torus-Node research on emergent spacetime, quantum gravity, gauge structure and grand unification.", "research.html"),
     "publications.html": ("Publications · Torus-Node", "Verified publication metadata, software records, and citation guidance for the Torus-Node research program.", "publications.html"),
     "research-record.html": ("Research Record · Torus-Node", "A versioned provenance network connecting Torus-Node publications, formal releases, and independent research by other authors through explicit references.", "research-record.html"),
     "verification.html": ("Verification · Torus-Node", "Verification scope, Lean 4 resources, reproducibility workflow, and limitations for the Torus-Node research program.", "verification.html"),
@@ -23,6 +23,17 @@ PAGES = {
     "about.html": ("About · Torus-Node", "About the independent Torus-Node Research Initiative and its initiating researcher, Youngik (Tom) Lee.", "about.html"),
 }
 
+PAGE_KEYWORDS = {
+    "index.html": ["Torus-Node", "emergent spacetime", "quantum gravity", "gauge structure", "grand unified theory", "theory of everything research", "Lean 4 formal verification"],
+    "research.html": ["discrete geometry", "D4 spatial moves", "S4 ordered-history algebra", "emergent gravity", "quantum gravity", "grand unification", "gauge theory", "chiral matter"],
+    "publications.html": ["Torus-Node preprint", "Youngik Tom Lee", "Lean 4 archive", "formal verification"],
+    "research-record.html": ["research provenance", "versioned publications", "independent verification", "research citations"],
+    "verification.html": ["Lean 4", "formal verification", "reproducibility", "axiom audit"],
+    "open-problems.html": ["quantum gravity open problems", "continuum limit", "reflection positivity", "grand unification research"],
+    "community.html": ["open science", "independent verification", "mathematical research collaboration"],
+    "contribute.html": ["research reproducibility", "counterexamples", "Lean 4 contributions"],
+    "about.html": ["Torus-Node Research Initiative", "Youngik Tom Lee", "independent theoretical physics research"],
+}
 def graph(filename: str, title: str, description: str, url: str) -> dict:
     person = {
         "@type": "Person",
@@ -46,6 +57,7 @@ def graph(filename: str, title: str, description: str, url: str) -> dict:
         "url": url,
         "name": title,
         "description": description,
+        "keywords": PAGE_KEYWORDS[filename],
         "isPartOf": {"@id": BASE + "#website"},
         "about": {"@id": BASE + "#initiative"},
         "dateModified": DATA["last_content_update"],
@@ -55,8 +67,10 @@ def graph(filename: str, title: str, description: str, url: str) -> dict:
         "@type": "ResearchProject",
         "@id": BASE + "#initiative",
         "name": "Torus-Node Research Initiative",
-        "description": "Independent theoretical research on emergent spacetime, gravity, gauge structure, and formal verification.",
+        "description": "Independent theoretical research on emergent spacetime, quantum gravity, gauge structure, grand unification, and formal verification. The project does not claim a completed grand unified theory or theory of everything.",
+        "keywords": PAGE_KEYWORDS["index.html"],
         "url": BASE,
+        "sameAs": [DATA["preprint"]["landing_url"], DATA["software"]["repository_url"], "https://doi.org/" + DATA["software"]["doi"]],
         "founder": {"@id": BASE + "#youngik-tom-lee"},
     }
     items = [website, webpage, initiative, person]
