@@ -20,6 +20,7 @@ PAGES = {
     "open-problems.html": ("Open Research Problems · Torus-Node", "Open mathematical and physical research problems in continuum reconstruction, reflection positivity, gauge structure, gravity, and phenomenology.", "open-problems.html"),
     "community.html": ("Research Community · Torus-Node", "GitHub Discussions, Issues, Pull Requests, and evidence-based scientific exchange for the Torus-Node research program.", "community.html"),
     "contribute.html": ("Contribute · Torus-Node", "How to reproduce results, report errors, submit counterexamples, contribute Lean code, and propose research collaboration.", "contribute.html"),
+    "updates.html": ("Research Updates · Torus-Node", "UTC-dated publication, software, verification, and portal updates for the Torus-Node research initiative.", "updates.html"),
     "about.html": ("About · Torus-Node", "About the independent Torus-Node Research Initiative and its initiating researcher, Youngik (Tom) Lee.", "about.html"),
 }
 
@@ -32,6 +33,7 @@ PAGE_KEYWORDS = {
     "open-problems.html": ["quantum gravity open problems", "continuum limit", "reflection positivity", "grand unification research"],
     "community.html": ["open science", "independent verification", "mathematical research collaboration"],
     "contribute.html": ["research reproducibility", "counterexamples", "Lean 4 contributions"],
+    "updates.html": ["Torus-Node research updates", "preprint version 2", "Lean 4 release", "Zenodo v1.1.0", "UTC publication dates"],
     "about.html": ["Torus-Node Research Initiative", "Torus-Node model", "Torus-Node theory", "torus theory", "grand unified theory", "GUT", "theory of everything", "TOE", "Youngik Tom Lee", "independent theoretical physics research"],
 }
 def graph(filename: str, title: str, description: str, url: str) -> dict:
@@ -75,6 +77,26 @@ def graph(filename: str, title: str, description: str, url: str) -> dict:
         "founder": {"@id": BASE + "#youngik-tom-lee"},
     }
     items = [website, webpage, initiative, person]
+    breadcrumb_names = {
+        "research.html": "Research",
+        "publications.html": "Publications",
+        "research-record.html": "Research Record",
+        "updates.html": "Updates",
+        "verification.html": "Verification",
+        "open-problems.html": "Open Research Problems",
+        "community.html": "Research Community",
+        "contribute.html": "Contribute",
+        "about.html": "About",
+    }
+    if filename in breadcrumb_names:
+        items.append({
+            "@type": "BreadcrumbList",
+            "@id": url + "#breadcrumb",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": BASE},
+                {"@type": "ListItem", "position": 2, "name": breadcrumb_names[filename], "item": url},
+            ],
+        })
     p = DATA["preprint"]
     s = DATA["software"]
     if filename == "publications.html":

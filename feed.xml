@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Torus-Node Research Updates</title>
+  <subtitle>UTC-dated publication, software, verification, and portal updates.</subtitle>
+  <id>https://s6ygleee.github.io/torus-node/updates.html</id>
+  <link rel="alternate" href="https://s6ygleee.github.io/torus-node/updates.html"/>
+  <link rel="self" type="application/atom+xml" href="https://s6ygleee.github.io/torus-node/feed.xml"/>
+  <updated>2026-11-22T12:12:15Z</updated>
+  <author><name>Youngik (Tom) Lee</name></author>
+  <entry>
+    <title>Search vocabulary and research context</title>
+    <id>https://s6ygleee.github.io/torus-node/updates.html#portal-2026-11-22</id>
+    <updated>2026-11-22T12:12:15Z</updated>
+    <published>2026-11-22T12:12:15Z</published>
+    <link href="https://s6ygleee.github.io/torus-node/updates.html#portal-2026-11-22"/>
+    <summary>Added bounded connections among torus theory, the Torus-Node model, grand unified theory (GUT), and theory of everything (TOE), with updated SEO metadata and responsive status cards.</summary>
+  </entry>
+  <entry>
+    <title>Lean 4 formalisation and reproducibility data v1.1.0</title>
+    <id>https://doi.org/10.5281/zenodo.24229820</id>
+    <updated>2026-11-14T20:31:04.017494Z</updated>
+    <published>2026-11-14T20:31:04.017494Z</published>
+    <link href="https://doi.org/10.5281/zenodo.24229820"/>
+    <summary>Immutable Zenodo archive of Lean 4 sources, certificates, calculations, and reproducibility material.</summary>
+  </entry>
+  <entry>
+    <title>Lean 4 formalisation and reproducibility data v1.0.0</title>
+    <id>https://doi.org/10.5281/zenodo.23863514</id>
+    <updated>2026-11-01T17:18:14Z</updated>
+    <published>2026-11-01T17:18:14Z</published>
+    <link href="https://doi.org/10.5281/zenodo.23863514"/>
+    <summary>Archived baseline release retained as a separate citable version.</summary>
+  </entry>
+</feed>

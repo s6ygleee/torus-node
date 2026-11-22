@@ -4,6 +4,15 @@ Public research portal for **Emergent Spacetime, Gravity, and Gauge Structure**,
 
 This repository is intentionally separate from [`torus-node-lean4`](https://github.com/s6ygleee/torus-node-lean4). It contains the public website, research roadmap, participation guidance, and GitHub community infrastructure. It does not duplicate or modify the Lean project.
 
+## Research portal
+
+- Public website: <https://s6ygleee.github.io/torus-node/>
+- Research updates and UTC release history: <https://s6ygleee.github.io/torus-node/updates.html>
+- Machine-readable Atom feed: <https://s6ygleee.github.io/torus-node/feed.xml>
+- Versioned Research Record: <https://s6ygleee.github.io/torus-node/research-record.html>
+- Publications and citation metadata: <https://s6ygleee.github.io/torus-node/publications.html>
+
+Use these links when citing the portal. The preprint, Zenodo releases, and Lean repository remain the primary research and software records.
 ## Research status
 
 The current manuscript describes a finite conditional model. The unrestricted Poisson-source-to-continuum identification and several physical hypotheses remain open. The Preprints.org version is a preprint and has not undergone peer review.
