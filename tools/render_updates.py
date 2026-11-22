@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "assets/data/research-records.json"
+METADATA = ROOT / "assets/data/research-metadata.json"
 UPDATES = ROOT / "updates.html"
 FEED = ROOT / "feed.xml"
 BASE = "https://s6ygleee.github.io/torus-node/"
@@ -92,8 +93,8 @@ def feed_entry(series: dict, record: dict, generated: str) -> str:
     ])
 
 
-def render_feed(registry: dict) -> None:
-    generated = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+def render_feed(registry: dict, content_date: str) -> None:
+    generated = f"{content_date}T00:00:00Z"
     entries = []
     for series in registry["series"]:
         for record in series["versions"]:
@@ -118,8 +119,9 @@ def render_feed(registry: dict) -> None:
 
 def main() -> int:
     registry = json.loads(REGISTRY.read_text(encoding="utf-8-sig"))
+    metadata = json.loads(METADATA.read_text(encoding="utf-8-sig"))
     render_page(registry)
-    render_feed(registry)
+    render_feed(registry, metadata["last_content_update"])
     count = sum(len(series["versions"]) for series in registry["series"])
     print(f"Rendered {count} research records and Atom feed")
     return 0
