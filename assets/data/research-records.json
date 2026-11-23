@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_content_update": "2026-11-16",
+  "last_content_update": "2026-11-23",
   "series": [
     {
       "id": "torus-node-preprint",
@@ -36,12 +36,12 @@
           "published_at": "2026-11-16",
           "date_precision": "date",
           "venue": "Preprints.org",
-          "doi": null,
-          "url": "https://www.preprints.org/manuscript/202611.0941",
+          "doi": "10.20944/preprints202611.0941.v2",
+          "url": "https://doi.org/10.20944/preprints202611.0941.v2",
           "status": "Current version",
           "peer_reviewed": false,
           "current": true,
-          "note": "The version-specific DOI is not shown until it resolves through a DOI metadata service."
+          "note": null
         }
       ]
     },
