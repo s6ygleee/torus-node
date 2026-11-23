@@ -14,6 +14,7 @@ DATA = json.loads((ROOT / "assets/data/research-metadata.json").read_text(encodi
 PAGES = {
     "index.html": ("Torus-Node Model Research | Emergent Spacetime & Quantum Gravity", "Independent Torus-Node model and torus theory research on emergent spacetime, quantum gravity, gauge structure, grand unified theory (GUT), and theory of everything (TOE).", ""),
     "research.html": ("Torus-Node Theory | Torus Theory, GUT & TOE", "Torus theory and the Torus-Node theory framework: emergent spacetime, quantum gravity, gauge structure, grand unified theory (GUT), and theory of everything (TOE) research boundaries.", "research.html"),
+    "research-briefs.html": ("Research Briefs | Torus-Node Model, D4 Stability & GUT/TOE Context", "Short, testable research briefs for the Torus-Node model: D4 spectral stability, finite reflection positivity, S4 gauge representations, Lean 4 verification, and carefully bounded GUT and TOE context.", "research-briefs.html"),
     "publications.html": ("Publications · Torus-Node", "Verified publication metadata, software records, and citation guidance for the Torus-Node research program.", "publications.html"),
     "research-record.html": ("Research Record · Torus-Node", "A versioned provenance network connecting Torus-Node publications, formal releases, and independent research by other authors through explicit references.", "research-record.html"),
     "verification.html": ("Verification · Torus-Node", "Verification scope, Lean 4 resources, reproducibility workflow, and limitations for the Torus-Node research program.", "verification.html"),
@@ -27,6 +28,7 @@ PAGES = {
 PAGE_KEYWORDS = {
     "index.html": ["Torus-Node", "Torus-Node model", "Torus-Node theory", "torus theory", "emergent spacetime", "quantum gravity", "grand unified theory", "GUT", "theory of everything", "TOE", "Lean 4 formal verification"],
     "research.html": ["torus theory", "Torus-Node model", "Torus-Node theory", "discrete geometry", "D4 spatial moves", "S4 ordered-history algebra", "emergent gravity", "quantum gravity", "grand unified theory", "GUT", "theory of everything", "TOE", "gauge theory", "chiral matter"],
+    "research-briefs.html": ["Torus-Node model", "Torus-Node theory", "torus theory", "D4 spectral stability", "reflection positivity", "S4 gauge representations", "Lean 4 formal verification", "emergent spacetime", "quantum gravity", "grand unified theory", "GUT", "theory of everything", "TOE"],
     "publications.html": ["Torus-Node preprint", "Youngik Tom Lee", "Lean 4 archive", "formal verification"],
     "research-record.html": ["research provenance", "versioned publications", "independent verification", "research citations"],
     "verification.html": ["Lean 4", "formal verification", "reproducibility", "axiom audit"],
@@ -79,6 +81,7 @@ def graph(filename: str, title: str, description: str, url: str) -> dict:
     items = [website, webpage, initiative, person]
     breadcrumb_names = {
         "research.html": "Research",
+        "research-briefs.html": "Research briefs",
         "publications.html": "Publications",
         "research-record.html": "Research Record",
         "updates.html": "Updates",

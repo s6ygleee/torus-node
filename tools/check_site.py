@@ -65,7 +65,7 @@ def main() -> int:
     parsed: dict[Path, Document] = {}
 
     expected = {
-        "index.html", "research.html", "publications.html", "verification.html",
+        "index.html", "research.html", "research-briefs.html", "publications.html", "verification.html",
         "open-problems.html", "community.html", "contribute.html", "about.html", "updates.html", "404.html",
     }
     missing_pages = sorted(expected - {path.name for path in html_files})

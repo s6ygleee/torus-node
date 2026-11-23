@@ -11,6 +11,7 @@ This repository is intentionally separate from [`torus-node-lean4`](https://gith
 - Machine-readable Atom feed: <https://s6ygleee.github.io/torus-node/feed.xml>
 - Versioned Research Record: <https://s6ygleee.github.io/torus-node/research-record.html>
 - Publications and citation metadata: <https://s6ygleee.github.io/torus-node/publications.html>
+- Research briefs for small, independently testable questions: <https://s6ygleee.github.io/torus-node/research-briefs.html>
 
 Use these links when citing the portal. The preprint, Zenodo releases, and Lean repository remain the primary research and software records.
 ## Research status
